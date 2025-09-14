@@ -32,13 +32,13 @@ jobs:
 
       - name: Log in to DockerHub
         env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_USERNAME: ${{ secrets.ankit379 }}
+          DOCKER_PASSWORD: ${{ secrets.Anita@1010 }}
         run: |
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
       - name: Tag and push
         run: |
-          IMAGE=${{ secrets.DOCKER_USERNAME }}/devops-sample-app:latest
+          IMAGE=${{ secrets.ankit379 }}/devops-sample-app:latest
           docker tag myapp:latest $IMAGE
           docker push $IMAGE
