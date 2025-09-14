@@ -1,0 +1,13 @@
+{
+  "name": "devops-sample-app",
+  "version": "1.0.0",
+  "description": "Simple Hello API for CI/CD practice",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

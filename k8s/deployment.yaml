@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-sample-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devops-sample-app
+  template:
+    metadata:
+      labels:
+        app: devops-sample-app
+    spec:
+      containers:
+        - name: app
+          image: YOUR_DOCKERHUB_USERNAME/devops-sample-app:latest
+          ports:
+            - containerPort: 3000
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
